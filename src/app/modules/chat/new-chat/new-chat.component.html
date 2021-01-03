@@ -1,0 +1,21 @@
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" (click)="closecomponent()">&times;</span>
+        <div class="wrapper">
+            <p>{{globalService['userDetails']['user']}}->{{newUserDetails['user']}}</p>
+            <span class="label">Send a message to start chat</span>
+            <div class="send-wrapper">
+
+                <form [formGroup]="chatGroup" (ngSubmit)="sendMesage()">
+                    <input formControlName="message" style="    width: 80%;
+                padding: 12px;">
+                    <button type="button" class="send" (click)="sendMesage()">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

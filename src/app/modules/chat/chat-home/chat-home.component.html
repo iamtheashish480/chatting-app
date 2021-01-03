@@ -1,0 +1,22 @@
+<div class="content">
+    <section class="left width-20">
+        <div class="chat-list">
+            <span class="header-label">Chats</span>
+            <ul>
+                <li *ngFor="let chat of globalService.chatList;let chatIndex=index;" (click)="chatAgain(chat,chat['id'])">
+                    {{ chat && chat['user1']==globalService.userDetails['loginId']?chat['user2Name']:chat['user1Name']}}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="center width-60">
+        <app-chat-window [anotherUser]="anotherUser"></app-chat-window>
+    </section>
+    <section class="right width-20">
+        <div class="friend-list">
+            <span class="header-label">Friends</span>
+            <ul>
+                <li *ngFor="let friend of filterUser ;let friendIndex=index;" (click)="startChat(friend,friend['loginId'])">{{friend['user']}}</li>
+            </ul>
+        </div>
+    </section>
+</div>
